@@ -155,21 +155,6 @@ npm run lint      # run Oxlint
 | Leaderboard      | `/leaderboard`    | Top publishers and most-consumed resources across the marketplace                  |
 | Agent            | `/agent`          | Machine-readable pricing schema and integration docs for autonomous agents          |
 
----
-
-## SCF Build Award
-
-OrbitLumen is submitted as part of the **Stellar Community Fund (SCF) Build Award** program. The project aims to demonstrate a production-quality, agent-ready commerce primitive for the Stellar ecosystem: on-chain access control for paywalled digital resources, settled through Soroban contracts and the x402 micropayment protocol.
-
-If you're reviewing this submission:
-
-- The **frontend** (this repo) is the primary user-facing surface described in the proposal.
-- On-chain logic lives in [`orbitlumen-contracts`](#repository-siblings) and is the component most relevant to technical due diligence.
-- See the [Architecture](#architecture) section above for how the pieces fit together, and the [Quick Start](#quick-start) section to run the app locally.
-
-We welcome feedback from SCF reviewers and the broader Stellar community — please open an issue on this repository with any questions.
-
----
 
 ## Repository Siblings
 
