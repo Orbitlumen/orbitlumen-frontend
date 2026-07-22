@@ -1,3 +1,10 @@
+import { Link } from "react-router-dom"
+
+const ROUTES: Record<string, string> = {
+  Catalog: "/catalog",
+  "My Vault": "/vault",
+}
+
 const COLUMNS = [
   {
     heading: "Marketplace",
@@ -36,12 +43,21 @@ export function Footer() {
               <ul className="mt-4 space-y-3">
                 {column.links.map((link) => (
                   <li key={link}>
-                    <a
-                      href="#"
-                      className="text-sm text-gray-500 transition-colors hover:text-gold"
-                    >
-                      {link}
-                    </a>
+                    {ROUTES[link] ? (
+                      <Link
+                        to={ROUTES[link]}
+                        className="text-sm text-gray-500 transition-colors hover:text-gold"
+                      >
+                        {link}
+                      </Link>
+                    ) : (
+                      <a
+                        href="#"
+                        className="text-sm text-gray-500 transition-colors hover:text-gold"
+                      >
+                        {link}
+                      </a>
+                    )}
                   </li>
                 ))}
               </ul>

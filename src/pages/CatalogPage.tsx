@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react"
+import { truncateAddress } from "../lib/format"
 
 type ResourceType = "API" | "DATASET" | "ML MODEL" | "RESEARCH"
 type SortOption = "latest" | "price-asc" | "price-desc" | "most-accessed"
@@ -165,10 +166,6 @@ const TYPE_STYLES: Record<ResourceType, string> = {
   DATASET: "bg-emerald-400/10 text-emerald-300 border-emerald-400/25",
   "ML MODEL": "bg-violet-400/10 text-violet-300 border-violet-400/25",
   RESEARCH: "bg-amber-400/10 text-amber-300 border-amber-400/25",
-}
-
-function truncateAddress(address: string) {
-  return `${address.slice(0, 4)}…${address.slice(-4)}`
 }
 
 function formatUsd(priceXLM: number) {

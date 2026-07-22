@@ -3,6 +3,7 @@ import { Navbar } from "./components/Navbar"
 import { Footer } from "./components/Footer"
 import { Home } from "./pages/Home"
 import { CatalogPage } from "./pages/CatalogPage"
+import { VaultPage } from "./pages/VaultPage"
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/catalog" element={<CatalogPage />} />
+          <Route path="/vault" element={<VaultPage />} />
         </Routes>
       </main>
       <Footer />
