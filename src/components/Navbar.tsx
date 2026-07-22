@@ -1,7 +1,9 @@
+import { Link } from "react-router-dom"
+
 const NAV_LINKS = [
-  { label: "Catalog", href: "#catalog" },
-  { label: "Features", href: "#features" },
-  { label: "How it Works", href: "#how-it-works" },
+  { label: "Catalog", href: "/catalog" },
+  { label: "Features", href: "/#features" },
+  { label: "How it Works", href: "/#how-it-works" },
   { label: "Docs", href: "#" },
 ]
 
@@ -52,23 +54,33 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-navy-border/80 bg-navy/85 backdrop-blur-md">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
-        <a href="#" className="flex items-center gap-2.5">
+        <Link to="/" className="flex items-center gap-2.5">
           <OrbitMark />
           <span className="font-heading text-lg font-semibold tracking-tight text-white">
             Orbit<span className="text-gold">Lumen</span>
           </span>
-        </a>
+        </Link>
 
         <nav className="hidden items-center gap-8 md:flex">
-          {NAV_LINKS.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              className="text-sm font-medium text-gray-400 transition-colors hover:text-white"
-            >
-              {link.label}
-            </a>
-          ))}
+          {NAV_LINKS.map((link) =>
+            link.href.startsWith("/") ? (
+              <Link
+                key={link.label}
+                to={link.href}
+                className="text-sm font-medium text-gray-400 transition-colors hover:text-white"
+              >
+                {link.label}
+              </Link>
+            ) : (
+              <a
+                key={link.label}
+                href={link.href}
+                className="text-sm font-medium text-gray-400 transition-colors hover:text-white"
+              >
+                {link.label}
+              </a>
+            ),
+          )}
         </nav>
 
         <a

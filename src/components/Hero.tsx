@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 export function Hero() {
   return (
     <section className="relative overflow-hidden px-6 pt-24 pb-28 lg:px-8 lg:pt-32">
@@ -30,12 +32,12 @@ export function Hero() {
         </p>
 
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <a
-            href="#"
+          <Link
+            to="/catalog"
             className="w-full rounded-full bg-gold px-8 py-3.5 text-sm font-semibold text-navy transition-colors hover:bg-gold-soft sm:w-auto"
           >
-            Explore the Catalog
-          </a>
+            Browse the vault
+          </Link>
           <a
             href="#"
             className="w-full rounded-full border border-navy-border px-8 py-3.5 text-sm font-semibold text-white transition-colors hover:border-gold/50 hover:text-gold sm:w-auto"
